@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="1001.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josecruz.controller.DoctorController">
+   <children>
+      <Pane prefHeight="541.0" prefWidth="170.0" style="-fx-background-color: #023047;">
+         <children>
+            <ImageView fitHeight="65.0" fitWidth="119.0" layoutX="36.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Logo.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnNuevo" layoutY="135.0" mnemonicParsing="false" onAction="#nuevo" prefHeight="48.0" prefWidth="170.0" style="-fx-background-radius: 0 0 0 0;" stylesheets="@../resource/DentalClinicCSS.css" text="Nuevo" textAlignment="CENTER" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button2" />
+                  <String fx:value="button1" />
+               </styleClass>
+            </Button>
+            <Button fx:id="btnEliminar" layoutY="183.0" mnemonicParsing="false" onAction="#eliminar" prefHeight="48.0" prefWidth="170.0" style="-fx-background-radius: 0 0 0 0;" stylesheets="@../resource/DentalClinicCSS.css" text="Eliminar" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button2" />
+                  <String fx:value="button1" />
+               </styleClass>
+            </Button>
+            <Button fx:id="btnEditar" layoutY="231.0" mnemonicParsing="false" onAction="#editar" prefHeight="48.0" prefWidth="170.0" style="-fx-background-radius: 0 0 0 0;" stylesheets="@../resource/DentalClinicCSS.css" text="Editar" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button2" />
+                  <String fx:value="button1" />
+               </styleClass>
+            </Button>
+            <Button fx:id="btnReporte" layoutY="279.0" mnemonicParsing="false" onAction="#reporte" prefHeight="48.0" prefWidth="170.0" style="-fx-background-radius: 0 0 0 0;" stylesheets="@../resource/DentalClinicCSS.css" text="Reporte" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button2" />
+                  <String fx:value="button1" />
+               </styleClass>
+            </Button>
+            <Button layoutY="384.0" mnemonicParsing="false" onMouseClicked="#menuPrincipal" prefHeight="48.0" prefWidth="170.0" style="-fx-background-radius: 0 0 0 0;" stylesheets="@../resource/DentalClinicCSS.css" text="Inicio" textFill="WHITE">
+               <styleClass>
+                  <String fx:value="button2" />
+                  <String fx:value="button1" />
+               </styleClass>
+            </Button>
+            <ImageView fx:id="imgNuevo" fitHeight="15.0" fitWidth="72.0" layoutX="36.0" layoutY="152.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Nuevo.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgEliminar" fitHeight="17.0" fitWidth="19.0" layoutX="36.0" layoutY="202.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Borrar.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgEditar" fitHeight="15.0" fitWidth="17.0" layoutX="38.0" layoutY="249.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Editar.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="imgReporte" fitHeight="20.0" fitWidth="54.0" layoutX="34.0" layoutY="293.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Reporte.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="21.0" fitWidth="62.0" layoutX="37.0" layoutY="399.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Home.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <Pane layoutX="170.0" layoutY="38.0" prefHeight="101.0" prefWidth="831.0" style="-fx-background-color: #219ebc;">
+         <children>
+            <Label layoutX="82.0" layoutY="45.0" prefHeight="34.0" prefWidth="191.0" text="Doctores" textFill="WHITE">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <Label layoutX="82.0" layoutY="37.0" text="Clinica dental" textFill="WHITE" />
+            <ImageView fitHeight="55.0" fitWidth="58.0" layoutX="28.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Doctores.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <TableView fx:id="tblDoctores" layoutX="428.0" layoutY="154.0" onKeyReleased="#seleccionarElemento" onMouseClicked="#seleccionarElemento" prefHeight="353.0" prefWidth="559.0" stylesheets="@../resource/DentalClinicCSS.css">
+        <columns>
+          <TableColumn fx:id="colNumeroColegiado" prefWidth="94.0" text="No. Colegiado" />
+          <TableColumn fx:id="colNombresDoctor" prefWidth="115.0" text="Nombres" />
+            <TableColumn fx:id="colApellidosDoctor" prefWidth="123.0" text="Apellidos" />
+            <TableColumn fx:id="colTelefonoContacto" prefWidth="99.0" text="Contacto" />
+            <TableColumn fx:id="colCodigoEspecialidad" prefWidth="126.0" text="Cod. Especialidad" />
+        </columns>
+      </TableView>
+      <GridPane layoutX="190.0" layoutY="167.0" prefHeight="222.0" prefWidth="222.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="No. Colegiado" />
+            <Label text="Nombres Doctor" GridPane.rowIndex="1" />
+            <Label text="Apellidos Doctor" GridPane.rowIndex="2" />
+            <Label text="Contacto" GridPane.rowIndex="3" />
+            <Label text="Cod. Especialidad" GridPane.rowIndex="4" />
+            <TextField fx:id="txtNumeroColegiado" editable="false" promptText="No/Colegiado" GridPane.columnIndex="1" />
+            <TextField fx:id="txtNombresDoctor" editable="false" promptText="Nombres" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <TextField fx:id="txtApellidosDoctor" editable="false" promptText="Apellidos" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="txtTelefonoContacto" editable="false" promptText="Teléfono" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <ComboBox fx:id="cmbCodigoEspecialidad" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="541.0" prefWidth="401.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.josecruz.controller.ProgramadorController">
+   <children>
+      <ImageView fitHeight="280.0" fitWidth="258.0" layoutX="73.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../image/Imagen%20Programador.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="166.0" layoutY="274.0" text="Programador" textFill="#023047" />
+      <Label layoutX="118.0" layoutY="271.0" prefHeight="78.0" prefWidth="167.0" text="José Javier" textFill="#023047">
+         <font>
+            <Font size="36.0" />
+         </font></Label>
+      <Label layoutX="148.0" layoutY="324.0" text="Cruz de la Cruz" textFill="#023047">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="84.0" layoutY="374.0" text="Actualmente se encuentra cursando el segundo &#10;año de carrera en informatica. Estudia en el Centro&#10;Educativo Técnico Laboral Kinal " textAlignment="JUSTIFY">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Circle fill="#ffb703" layoutX="271.0" layoutY="236.0" radius="28.0" stroke="#f4f4f4" strokeType="INSIDE" strokeWidth="4.0" />
+      <Label layoutX="160.0" layoutY="433.0" text="2018059" textAlignment="CENTER">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Label layoutX="209.0" layoutY="433.0" text="IN5EM">
+         <font>
+            <Font size="11.0" />
+         </font>
+      </Label>
+      <Button layoutY="468.0" mnemonicParsing="false" onAction="#menuPrincipal" prefHeight="65.0" prefWidth="401.0" style="-fx-background-radius: 0 0 0 0;" stylesheets="@../resource/DentalClinicCSS.css">
+         <styleClass>
+            <String fx:value="button1" />
+            <String fx:value="button2" />
+         </styleClass>
+         <graphic>
+            <ImageView fitHeight="65.0" fitWidth="192.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../image/Logo.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+   </children>
+</AnchorPane>

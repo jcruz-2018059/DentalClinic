@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ReporteDoctores" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="b68399b4-bbb4-4381-83e8-6ae26ccc52b7">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="Fondo" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[Select * from Doctores D INNER JOIN Especialidades E
+on D.codigoEspecialidad = E.codigoEspecialidad;]]>
+	</queryString>
+	<field name="numeroColegiado" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="nombresDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="apellidosDoctor" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="telefonoContacto" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="codigoEspecialidad" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="descripcion" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<background>
+		<band height="752" splitType="Stretch">
+			<image>
+				<reportElement x="0" y="0" width="572" height="752" uuid="b356f139-cc54-4e8c-be8e-0f0f3ee951c4"/>
+				<imageExpression><![CDATA[$P{Fondo}]]></imageExpression>
+			</image>
+		</band>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="116" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="30" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="0" width="100" height="20" uuid="c8085617-4f30-4d4d-b313-37b650dd74c7"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Nombres:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="182" y="0" width="100" height="20" uuid="76ceac9b-8bc1-4d02-981f-07177d00ab52"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Apellidos:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="304" y="0" width="100" height="20" uuid="24dd8faa-2b2f-4c42-a313-ab43db194a4c"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Contacto:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="414" y="0" width="100" height="20" uuid="af0f721f-910c-466a-b088-516ee51aab12"/>
+				<textElement>
+					<font fontName="Arial" isBold="true"/>
+				</textElement>
+				<text><![CDATA[Especialidad:]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="31" splitType="Stretch">
+			<textField>
+				<reportElement x="69" y="11" width="100" height="20" uuid="5f5d152b-ebb4-4fcc-afc0-699ce993eaf2"/>
+				<textFieldExpression><![CDATA[$F{nombresDoctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="182" y="11" width="100" height="20" uuid="4b8611f0-06ca-4574-8887-dd67571343c5"/>
+				<textFieldExpression><![CDATA[$F{apellidosDoctor}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="304" y="11" width="100" height="20" uuid="18baac09-51f5-4fdf-af1c-3c47cf351176"/>
+				<textFieldExpression><![CDATA[$F{telefonoContacto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="414" y="11" width="100" height="20" uuid="d4b9566b-6bb6-4aaa-aa72-28417f8beaf9"/>
+				<textFieldExpression><![CDATA[$F{descripcion}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="36" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="73" splitType="Stretch">
+			<staticText>
+				<reportElement x="242" y="0" width="109" height="20" uuid="16b0fc7a-7faf-4207-acf7-c66b1ae3c77e"/>
+				<text><![CDATA[Nos encanta tu sonrisa.]]></text>
+			</staticText>
+		</band>
+	</pageFooter>
+</jasperReport>
